@@ -29,7 +29,7 @@ class DonutTab extends StatelessWidget {
             donutFlavor: donutsOnSale[index][0],
             donutPrice: donutsOnSale[index][1],
             donutColor: donutsOnSale[index][2],
-            imageName: donutsOnSale[index][3],
+            imageName: donutsOnSale[index][3], donutStore: '',
           );
         });
   }
