@@ -78,8 +78,45 @@ class _HomePageState extends State<HomePage> {
 
               ],
               ),
-            )
+            ),
             //Carrito
+            Container(
+              color:Colors.white,
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                   Padding(
+                    padding: EdgeInsets.only(left: 28),
+                    child: Column(
+                      //alinear a la izquierda
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("6 items | \$12.99",
+                         style: TextStyle(
+                          fontSize:18,
+                          fontWeight: FontWeight.bold),),
+                        Text(
+                          'Delivery charge included', 
+                        style: TextStyle(fontSize:12),
+                    ),
+                    
+                        
+                      ],
+                    )
+                  ),
+                  ElevatedButton(
+                          onPressed: (){},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color.fromARGB(255, 215, 113, 148),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 24, vertical: 12)),
+                          child: const Text(
+                        'View Cart', style: TextStyle(color: Colors.white),
+                      )),
+                ]
+              ),
+            )
           ],
         )
       ),
