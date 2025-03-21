@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DonutTile extends StatelessWidget {
+class BurgerTile extends StatelessWidget {
   final String donutFlavor;
   final String donutPrice;
   final dynamic
@@ -9,7 +9,7 @@ class DonutTile extends StatelessWidget {
   final String donutStore;
   final VoidCallback onAddToCart;
 
-  const DonutTile({
+  const BurgerTile({
     super.key,
     required this.donutFlavor,
     required this.donutPrice,

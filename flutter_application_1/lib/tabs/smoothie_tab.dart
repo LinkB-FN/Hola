@@ -2,19 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/donut_tile.dart';
 
 class SmoothieTab extends StatelessWidget {
+  final Function(double) onAddToCart;
+
+  SmoothieTab({required this.onAddToCart});
   // Lista de donas
   final List donutsOnSale = [
     // [ donutFlavor, donutPrice, donutColor, imageName ]
-    ["Ice Cream", "36", Colors.blue, "lib/images/icecream_donut.png"],
-    ["Strawberry", "45", Colors.red, "lib/images/strawberry_donut.png"],
-    ["Grape Ape", "84", Colors.purple, "lib/images/grape_donut.png"],
-    ["Choco", "95", Colors.brown, "lib/images/chocolate_donut.png"],
-    ["Skibidi", "36", Colors.blue, "lib/images/icecream_donut.png"],
-    ["Toilet", "45", Colors.red, "lib/images/strawberry_donut.png"],
-    ["ania", "84", Colors.purple, "lib/images/grape_donut.png"],
-    ["Cosa", "95", Colors.brown, "lib/images/chocolate_donut.png"],
+    ["Ice Cream", "36", Colors.blue, "lib/images/Smoothie4.png"],
+    ["Strawberry", "45", Colors.red, "lib/images/Smoothie6.png"],
+    ["Grape ", "84", Colors.purple, "lib/images/Smoothie9.png"],
+    ["Chocolate", "95", Colors.brown, "lib/images/Smoothie5.png"],
+
+    ["Mocca", "36", Colors.blue, "lib/images/ChocoSmoothie8.png"],
+    ["Orange", "45", Colors.red, "lib/images/OrangeSmoothie3.png"],
+    ["Apple", "84", Colors.purple, "lib/images/StrawbeerySmoothie.png"],
+    ["Mango", "95", Colors.brown, "lib/images/MangoSmoothie1.png"],
+
   ];
-  SmoothieTab({super.key});
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +39,7 @@ class SmoothieTab extends StatelessWidget {
             donutPrice: donutsOnSale[index][1],
             donutColor: donutsOnSale[index][2],
             imageName: donutsOnSale[index][3], donutStore: '',
+            onAddToCart: () => onAddToCart(donutsOnSale[index][2]),
           );
         });
   }

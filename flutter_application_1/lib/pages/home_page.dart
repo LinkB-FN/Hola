@@ -28,6 +28,16 @@ class _HomePageState extends State<HomePage> {
     //Pizza tab
     const MyTab(iconPath: 'lib/icons/pizza.png'),
   ];
+  int totalItems = 0;
+  double totalPrice = 0.0;
+
+  void addToCart(double price) {
+    setState(() {
+      totalItems++;
+      totalPrice += price;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -52,7 +62,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 18),
               child: Row(
                 children: [
-                  Text("I want to ", style: TextStyle(fontSize: 32),),
+                  const Text("I want to ", style: TextStyle(fontSize: 32),),
                   Text("Eat", style: TextStyle(
                     //Tamaño de letra
                     fontSize: 32, 
@@ -69,52 +79,50 @@ class _HomePageState extends State<HomePage> {
             //Tab bar view
             Expanded(
               child: TabBarView(children: [
-                DonutTab(),
-                BurgerTab(), 
-                SmoothieTab(),
-                PancakeTab(),
-                PizzaTab(),
+                DonutTab(onAddToCart: addToCart),
+                BurgerTab(onAddToCart: addToCart), 
+                SmoothieTab(onAddToCart: addToCart),
+                PancakeTab(onAddToCart: addToCart),
+                PizzaTab(onAddToCart: addToCart),
 
 
               ],
               ),
             ),
             //Carrito
-            Container(
-              color:Colors.white,
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                   Padding(
-                    padding: EdgeInsets.only(left: 28),
-                    child: Column(
-                      //alinear a la izquierda
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("6 items | \$12.99",
-                         style: TextStyle(
-                          fontSize:18,
-                          fontWeight: FontWeight.bold),),
-                        Text(
-                          'Delivery charge included', 
-                        style: TextStyle(fontSize:12),
+              Container(
+                color: Colors.white,
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 28),
+                      child: Column(
+                        //Alinear a la izquierda (horizontal)
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '$totalItems Items | \$${totalPrice.toStringAsFixed(2)}',
+                            style: const TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'Delivery Charges Included',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
                     ),
-                    
-                        
-                      ],
-                    )
-                  ),
-                  ElevatedButton(
-                          onPressed: (){},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromARGB(255, 215, 113, 148),
+                    ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.pink,
                             padding: const EdgeInsets.symmetric(
-                              horizontal: 24, vertical: 12)),
-                          child: const Text(
-                        'View Cart', style: TextStyle(color: Colors.white),
-                      )),
-                ]
+                                horizontal: 24, vertical: 12)),
+                        child: const Text('View Cart',
+                            style: TextStyle(color: Colors.white))),
+                  ],
               ),
             )
           ],
