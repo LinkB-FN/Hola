@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 18),
               child: Row(
                 children: [
-                  const Text("I want to ", style: TextStyle(fontSize: 32),),
+                  const Text("I need to ", style: TextStyle(fontSize: 32),),
                   Text("Eat", style: TextStyle(
                     //Tamaño de letra
                     fontSize: 32, 
