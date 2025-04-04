@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "709845204442",
+    "project_id": "flutter-food-app-efdfc",
+    "storage_bucket": "flutter-food-app-efdfc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709845204442:android:aefc3ea6819d01fe4114e3",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2KEx5LAcli-Hlo_SmyROMHPEMBUInFmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
