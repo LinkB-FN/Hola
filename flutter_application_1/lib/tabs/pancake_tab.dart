@@ -4,7 +4,7 @@ import 'package:flutter_application_1/utils/donut_tile.dart';
 class PancakeTab extends StatelessWidget {
   final Function(double) onAddToCart;
 
-  PancakeTab({required this.onAddToCart});
+  PancakeTab({super.key, required this.onAddToCart});
   // Lista de donas
   final List donutsOnSale = [
     // [ donutFlavor, donutPrice, donutColor, imageName ]
